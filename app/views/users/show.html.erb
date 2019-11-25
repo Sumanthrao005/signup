@@ -1,0 +1,18 @@
+<% if flash[:notice] %>
+   <div class="notice"><%= flash[:notice] %></div>
+   <% end %>
+<p>
+  <strong>User:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @user.phone%>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @user.email%>
+</p>
+<%= link_to 'List of users', users_list_path%><br>
+<a href="log_out">Log out</a>

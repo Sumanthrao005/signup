@@ -1,0 +1,22 @@
+<h1>Listing Users</h1>
+<%= link_to 'New users', new_user_path %>
+<table>
+  <tr>
+    <th>User</th>
+    <th>Phone number</th>
+    <th>Email</th>
+    <th>Token</th>
+    <th colspan="4"></th>
+  </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.phone %></td>
+      <td><%= user.email %></td>
+      <td><%= user.token %></td>
+
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'Back', users_login_path %>

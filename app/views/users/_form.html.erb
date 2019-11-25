@@ -1,0 +1,45 @@
+<%= form_with model: @user, local: true do |form| %>
+
+  <p>
+
+    <%= form.label :Username %><br>
+    <%= form.text_field :name%>
+  <%  if @user.errors.any? && !@user.errors[:name].empty?  %>
+    <div style="color:red"><%= @user.errors[:name].first %></div>
+<%  end %>
+
+
+  </p>
+  <p>
+    <%= form.label :Phone_number %><br>
+    <%= form.text_field :phone%>
+  </p>
+  <p>
+    <%= form.label :Email%><br>
+    <%= form.text_field :email%>
+    <%  if @user.errors.any? && !@user.errors[:email].empty?  %>
+      <div style="color:red"><%= @user.errors[:email].first %></div>
+      <%  end %>
+  </p>
+
+  <p>
+    <%= form.label :Password %><br>
+    <%= form.text_field :password %>
+    <%  if @user.errors.any? && !@user.errors[:password].empty?  %>
+      <div style="color:red"><%= @user.errors[:password].first %></div>
+      <%  end %>
+  </p>
+  <p>
+    <%= form.label :Password_confirmation %><br>
+    <%= form.text_field :password_confirmation %>
+    <%  if @user.errors.any? && !@user.errors[:password_confirmation].empty?  %>
+      <div style="color:red"><%= @user.errors[:password_confirmation].first %></div>
+      <%  end %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+
+  </p>
+
+<% end %>
